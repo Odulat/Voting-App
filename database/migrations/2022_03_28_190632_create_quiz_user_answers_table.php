@@ -20,7 +20,7 @@ class CreateQuizUserAnswersTable extends Migration
             $table->unsignedInteger('quiz_user_id');
             $table->unsignedInteger('user_variant');
             $table->boolean('is_correct')->default(0);
-            $table->timestamp('created_at)')
+            $table->timestamp('created_at')
                 ->useCurrent();
             $table->timestamp('updated_at')
                 ->default(

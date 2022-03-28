@@ -18,7 +18,7 @@ class CreateQuizUserTable extends Migration
             $table->id();
             $table->unsignedInteger('quiz_id');
             $table->unsignedInteger('user_id');
-            $table->timestamp('created_at)')
+            $table->timestamp('created_at')
                 ->useCurrent();
             $table->timestamp('updated_at')
                 ->default(

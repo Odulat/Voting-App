@@ -23,7 +23,7 @@ class CreateQuestionsTable extends Migration
             $table->string('variant3');
             $table->string('variant4');
             $table->string('answer');
-            $table->timestamp('created_at)')
+            $table->timestamp('created_at')
                 ->useCurrent();
             $table->timestamp('updated_at')
                 ->default(
