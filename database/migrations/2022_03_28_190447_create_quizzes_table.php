@@ -5,20 +5,20 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuizesTable extends Migration
+class CreateQuizzesTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('quizes', function (Blueprint $table) {
+        Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('code');
-            $table->boolean('is_active')->default(0);
+            $table->integer('code')->nullable();
+            $table->boolean('is_active')->default(0)->nullable();
             $table->timestamp('created_at')
                 ->useCurrent();
             $table->timestamp('updated_at')
@@ -37,8 +37,8 @@ class CreateQuizesTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down(): void
     {
-        Schema::dropIfExists('quizes');
+        Schema::dropIfExists('questions');
     }
 }

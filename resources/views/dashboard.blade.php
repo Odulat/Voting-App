@@ -1,8 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Главная') }}
-        </h2>
+{{--        <h2 class="font-semibold text-xl text-gray-800 leading-tight">--}}
+{{--            {{ __('Главная') }}--}}
+{{--        </h2>--}}
     </x-slot>
 
     <div class="py-12">
@@ -42,8 +42,9 @@
                         </div>
                         <div class="w-full">
                             <div class="mt-12 subscribe-form">
-                                <form action="#" class="relative focus:outline-none">
-                                    <input type="text" placeholder="Введите название" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
+                                <form action="{{ route('quizzes.store') }}" class="relative focus:outline-none" method="POST">
+                                    @csrf
+                                    <input type="text" name="name" placeholder="Введите название" class="w-full py-4 pl-6 pr-40 duration-300 border-2 rounded focus:border-theme-color focus:outline-none">
                                     <x-button class="mt-5">
                                         {{ __('Создать') }}
                                     </x-button>

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Quiz extends Model
 {
     use SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'code',
+        'is_active',
+    ];
 }
